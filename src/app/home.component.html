@@ -1,0 +1,5 @@
+<div>
+  <p>Loaded page at: {{ pageTimestamp | date : "mediumTime" }}</p>
+  <p>Got data at: {{ apiTimestamp | date : "mediumTime" }}</p>
+  <pre>{{ data | json }}</pre>
+</div>

@@ -1,30 +1,13 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `<router-outlet> </router-outlet> `,
 })
-export class AppComponent implements OnInit{
-  constructor(private httpService: HttpClient){
+export class AppComponent implements OnInit {
+  constructor(private readonly oauthService: OAuthService) {}
 
-    
-  }
   ngOnInit(): void {
-   setInterval(()=>{
-    this.httpService.get('https://epalpalletsdev.westeurope.cloudapp.azure.com/api/notifications').subscribe(
-      {
-        next: (data) => {
-          console.log(data);
-        },
-        error: (error) => {
-          console.error('Error:', error);
-        }
-      }
-    );
-   }, 10000)
   }
-
-  title = 'epalFake';
 }
