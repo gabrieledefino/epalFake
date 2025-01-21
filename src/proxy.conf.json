@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "https://epalpalletsdev.westeurope.cloudapp.azure.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
